@@ -23,23 +23,25 @@
         <div class="playa__header__top">
             <div class="container">
                 <div class="row ">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-2">
                         <div class="playa__header__toggle-menu" id="menuToggle">
-                        <span class="playa__header__toggle-menu__ico">
-                            <span></span>
-                        </span>
-                            меню
+                            <span class="playa__header__toggle-menu__ico">
+                                <span></span>
+                            </span>
+                            <span class="only-pc">меню</span>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-8">
                         <div class="playa__header__logo">
                             <svg class="icon" width="170" height="68">
                                 <use xlink:href="#svg-logo"></use>
                             </svg>
                         </div>
                     </div>
-                    <div class="col-lg-4 text-right playa__header__col-tel">
-                        <a href="tel:+79787775533" class="playa__header__phone">+7 978 777-55-33</a>
+                    <div class="col-lg-4 col-2 text-right playa__header__col-tel">
+                        <a href="tel:+79787775533" class="playa__header__phone">
+                            <span class="only-pc">+7 978 777-55-33</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -51,11 +53,33 @@
                 <p>Твой персональный остров вкуса</p>
             </div>
             <div class="d-flex justify-content-center gs_reveal">
-                <button class="btn btn-yellow">ЗАБРОНИРОВАТЬ СТОЛИК</button>
+                <button data-bs-toggle="modal" data-bs-target="#orderModal" class="btn btn-yellow">ЗАБРОНИРОВАТЬ
+                    СТОЛИК
+                </button>
             </div>
         </div>
         <div class="playa__header__nav" id="navWrap">
-
+            <div class="container">
+                <ul class="nav playa__header__nav__list">
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#about_us"
+                           class="js-scroll playa__header__nav__item">О нас</a>
+                    </li>
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#menu"
+                           class="js-scroll playa__header__nav__item">Наше меню</a>
+                    </li>
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#address"
+                           class=" playa__header__nav__item">Контакты</a>
+                    </li>
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#orderModal"
+                           data-bs-toggle="modal" data-bs-target="#orderModal" class="playa__header__nav__item">Забронировать
+                            столик</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <div class="playa__header-footer gs_reveal">Добро пожаловать!</div>

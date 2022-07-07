@@ -29,6 +29,10 @@ body {
       z-index: 20;
       width: 100vw;
       height: 100vh;
+      background: #ec641d url("../images/dist/bg.svg") 50% 50% / cover;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(-100%);
+      overflow: hidden;
     }
 
     &__logo {
@@ -48,7 +52,7 @@ body {
       white-space: nowrap;
       letter-spacing: 0.1em;
       &:hover {
-        color: #ec641d;
+        color: #fff;
       }
     }
 
@@ -118,18 +122,18 @@ body {
   z-index: 2;
   text-transform: uppercase;
 
+}
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 10;
-    width: 1px;
-    height: 300px;
-    background: #a6a6a6;
-    left: 50%;
-    bottom: 105px;
-  }
+.playa__header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 10;
+  width: 1px;
+  height: 300px;
+  background: #a6a6a6;
+  left: 50%;
+  bottom: -150px;
 }
 
 /*.wow { visibility: hidden; }*/
@@ -522,5 +526,145 @@ body {
       justify-content: center;
       margin-left: 20px;
     }
+  }
+}
+.playa__header__toggle-menu {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  &__ico {
+    width: 40px;
+    display: block;
+    position: relative;
+    z-index: 20;
+    margin-right: 25px;
+    height: 18px;
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      transition: all 0.5s ease-in-out;
+      width: 100%;
+      left: 0;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+    }
+    &::after {
+      top: 0;
+    }
+    &::before {
+      bottom: 0;
+    }
+    span {
+      display: block;
+      width: 15px;
+      height: 2px;
+      background-color: #fff;
+      left: 0;
+      transition: all 0.35s ease-in-out;
+      top: 50%;
+      margin-top: -1px;
+      position: absolute;
+    }
+  }
+  &:hover {
+    .playa__header__toggle-menu__ico {
+      span {
+        width: 100%;
+      }
+    }
+  }
+}
+
+body.menu-active {
+  .playa__header__top {
+    height: 120px;
+  }
+  .playa__header__toggle-menu {
+    &__ico {
+      &::after,
+      &::before {
+        width: 0;
+      }
+      span {
+        width: 100%;
+      }
+    }
+  }
+  .playa__header__nav {
+    transform: translateY(0);
+  }
+}
+.playa__header__nav__list {
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 40;
+  padding-top: 120px;
+  padding-bottom: 50px;
+  li {
+    padding: 25px 0;
+    text-align: center;
+    overflow: hidden;
+    a {
+      display: inline-block;
+      white-space: nowrap;
+      color: #fff;
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 50px;
+      text-decoration: none;
+      opacity: 0;
+      cursor: pointer;
+      &::after,
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 30;
+        bottom: 0;
+        transition: all 0.3s ease-in-out;
+        width: 0;
+        height: 4px;
+        background: #f6aa3b;
+      }
+      &::after{
+        left: 50%;
+      }
+      &::before {
+        right: 50%;
+      }
+      &:hover {
+        &::after,
+        &::before {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+.modal {
+  background: #ec641d url("../images/dist/bg.svg") 50% 50% / cover;
+}
+.btn-check:focus+.btn, .btn:focus {
+  box-shadow: none !important;
+}
+.playa__modal {
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  &__header {
+    position: relative;
   }
 }

@@ -24,23 +24,25 @@
         <div class="playa__header__top">
             <div class="container">
                 <div class="row ">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-2">
                         <div class="playa__header__toggle-menu" id="menuToggle">
-                        <span class="playa__header__toggle-menu__ico">
-                            <span></span>
-                        </span>
-                            меню
+                            <span class="playa__header__toggle-menu__ico">
+                                <span></span>
+                            </span>
+                            <span class="only-pc">меню</span>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4 col-8">
                         <div class="playa__header__logo">
                             <svg class="icon" width="170" height="68">
                                 <use xlink:href="#svg-logo"></use>
                             </svg>
                         </div>
                     </div>
-                    <div class="col-lg-4 text-right playa__header__col-tel">
-                        <a href="tel:+79787775533" class="playa__header__phone">+7 978 777-55-33</a>
+                    <div class="col-lg-4 col-2 text-right playa__header__col-tel">
+                        <a href="tel:+79787775533" class="playa__header__phone">
+                            <span class="only-pc">+7 978 777-55-33</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -52,15 +54,37 @@
                 <p>Твой персональный остров вкуса</p>
             </div>
             <div class="d-flex justify-content-center gs_reveal">
-                <button class="btn btn-yellow">ЗАБРОНИРОВАТЬ СТОЛИК</button>
+                <button data-bs-toggle="modal" data-bs-target="#orderModal" class="btn btn-yellow">ЗАБРОНИРОВАТЬ
+                    СТОЛИК
+                </button>
             </div>
         </div>
         <div class="playa__header__nav" id="navWrap">
-
+            <div class="container">
+                <ul class="nav playa__header__nav__list">
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#about_us"
+                           class="js-scroll playa__header__nav__item">О нас</a>
+                    </li>
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#menu"
+                           class="js-scroll playa__header__nav__item">Наше меню</a>
+                    </li>
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#address"
+                           class=" playa__header__nav__item">Контакты</a>
+                    </li>
+                    <li>
+                        <a onclick="document.body.classList.toggle('menu-active');return true;" href="#orderModal"
+                           data-bs-toggle="modal" data-bs-target="#orderModal" class="playa__header__nav__item">Забронировать
+                            столик</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
     <div class="playa__header-footer gs_reveal">Добро пожаловать!</div>
-<div class="playa__section1">
+<div class="playa__section1" id="about_us">
     <div class="container">
         <div class="playa__img-box1 ">
             <div class="gs_reveal">
@@ -107,7 +131,7 @@
             </div>
         </div>
         <div class="col-lg-5 col-md-12 offset-lg-1 offset-md-0">
-            <div class="text">
+            <div class="text playa-box-text">
                 <svg class="d-block" width="47" height="64">
                     <use xlink:href="#svg-before-title1"></use>
                 </svg>
@@ -118,9 +142,9 @@
             </div>
         </div>
     </div>
-    <div class="row fpad120">
-        <div class="col-lg-5 col-md-12 tpad70 text">
-            <div class="fpad120">
+    <div class="row fpad120 mob-desc-img2">
+        <div class="col-lg-5 col-md-12 ">
+            <div class="fpad120 playa-box-text tpad70 text">
                 <svg class="d-block" width="64" height="40">
                     <use xlink:href="#svg-before-title2"></use>
                 </svg>
@@ -175,7 +199,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 offset-lg-1 offset-md-0">
-                <div class="text fpad120">
+                <div class="text fpad120 playa-box-text">
                     <svg class="d-block" width="44" height="64">
                         <use xlink:href="#svg-before-title3"></use>
                     </svg>
@@ -202,7 +226,7 @@
     </div>
 </div>
 <div class="container tpad50 position-relative zi-2">
-    <div class="row tpad50">
+    <div class="row tpad50" id="menu">
         <div class="col-lg-5">
             <div class="playa__menu-title">
                 <svg class="d-block" width="64" height="59">
@@ -669,8 +693,8 @@
         </div>
     </div>
 </div>
-<footer class="playa__footer">
-    <div class="container">
+<footer class="playa__footer" >
+    <div class="container" >
         <div class="playa__footer__logo">
             <svg class="icon" width="170" height="68">
                 <use xlink:href="#svg-logo"></use>
@@ -685,14 +709,14 @@
         <div class="fpad50 d-flex playa__footer__row">
             <div class="playa__footer__row__left">
                 <a href="tel:+79787775533" class="playa__footer__phone">+7 978 777-55-33</a>
-                <button class="btn btn-yellow">ЗАБРОНИРОВАТЬ СТОЛИК</button>
+                <button class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#orderModal">ЗАБРОНИРОВАТЬ СТОЛИК</button>
             </div>
             <div class="playa__footer__soc">
                 <a href="" target="_blank">vkontakte </a>
                 <a href="" target="_blank">odnoklassniki</a>
             </div>
         </div>
-        <div class="playa__footer__addr fpad50">
+        <div class="playa__footer__addr fpad50" id="address">
             <p>Крым, пгт. Новофедоровка, ул.Прибрежная, 15</p>
             <p>Наши координаты: 45.095808, 33.557196</p>
             <a href="https://yandex.ru/maps/977/republic-of-crimea/house/pribrezhnaya_ulitsa_15/Z0oYcwJnSEwBQFpvfXx4dHRjbA==/?ll=33.556794%2C45.095247&z=16.4"
@@ -720,6 +744,29 @@
         </div>
     </div>
 </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="orderModal"   tabindex="-1"  aria-hidden="true">
+    <div class="modal-dialog container">
+        <div class="modal-content playa__modal">
+            <div class="playa__modal__header">
+                <div class="playa__header__logo">
+                    <svg class="icon" width="170" height="68">
+                        <use xlink:href="#svg-logo"></use>
+                    </svg>
+                </div>
+                <a href="" data-bs-dismiss="modal">
+                    Закрыть
+                </a>
+            </div>
+            <div class="playa__modal__wrap">
+                11
+            </div>
+
+        </div>
+    </div>
+</div>
+
 </div>
 
 <div style="display: none">
@@ -831,10 +878,11 @@
 
 
 </div>
-
-
-<script type='text/javascript' src="js/dist/gsap.js"></script>
 <script type='text/javascript' src="js/app.min.js"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js?ver=3.8.0'
+        id='gsap-js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js?ver=3.8.0'
+        id='ScrollTrigger-js'></script>
 
 </body>
 </html>
