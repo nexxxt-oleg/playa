@@ -1,5 +1,5 @@
-<footer class="playa__footer" >
-    <div class="container" >
+<footer class="playa__footer">
+    <div class="container">
         <div class="playa__footer__logo">
             <svg class="icon" width="170" height="68">
                 <use xlink:href="#svg-logo"></use>
@@ -11,22 +11,27 @@
         <div class="playa__footer__time">
             Ежедневно 9:00 — 23:00
         </div>
-        <div class="fpad50 d-flex playa__footer__row">
-            <div class="playa__footer__row__left">
-                <a href="tel:+79787775533" class="playa__footer__phone">+7 978 777-55-33</a>
-                <button class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#orderModal">ЗАБРОНИРОВАТЬ СТОЛИК</button>
+        <div class=" d-flex playa__footer__row">
+            <div class="playa__footer__row__left ">
+                <div class="fpad50">
+                    <a href="tel:+79787775533" class="playa__footer__phone">+7 978 777-55-33</a>
+                    <button class="btn btn-yellow" data-bs-toggle="modal" data-bs-target="#orderModal">ЗАБРОНИРОВАТЬ
+                        СТОЛИК
+                    </button>
+                </div>
+                <div class="playa__footer__addr fpad50" id="address">
+                    <p>Крым, пгт. Новофедоровка, ул.Прибрежная, 15</p>
+                    <p>Наши координаты: <span class="coordinates">45.095808, 33.557196</span></p>
+                    <a href="https://yandex.ru/maps/977/republic-of-crimea/house/pribrezhnaya_ulitsa_15/Z0oYcwJnSEwBQFpvfXx4dHRjbA==/?ll=33.556794%2C45.095247&z=16.4"
+                       target="_blank">Построить маршрут</a>
+                </div>
             </div>
             <div class="playa__footer__soc">
                 <a href="" target="_blank">vkontakte </a>
                 <a href="" target="_blank">odnoklassniki</a>
             </div>
         </div>
-        <div class="playa__footer__addr fpad50" id="address">
-            <p>Крым, пгт. Новофедоровка, ул.Прибрежная, 15</p>
-            <p>Наши координаты: 45.095808, 33.557196</p>
-            <a href="https://yandex.ru/maps/977/republic-of-crimea/house/pribrezhnaya_ulitsa_15/Z0oYcwJnSEwBQFpvfXx4dHRjbA==/?ll=33.556794%2C45.095247&z=16.4"
-               target="_blank">Построить маршрут</a>
-        </div>
+
         <div class="playa__footer__bottom">
             <div class="row align-items-center">
                 <div class="col-lg-4 col-xl-3">
@@ -37,7 +42,7 @@
                 </div>
                 <div class="col-lg-4 col-xl-3 text-right">
                     <a href="" target="_blank" class="web-master">
-                        Разработка сайта
+                        <span>Разработка сайта</span>
                         <div class="web-master__ico">
                             <svg class="icon" width="22" height="22">
                                 <use xlink:href="#svg-kotico"></use>
@@ -51,7 +56,7 @@
 </footer>
 
 <!-- Modal -->
-<div class="modal fade" id="orderModal"   tabindex="-1"  aria-hidden="true">
+<div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog container">
         <div class="modal-content playa__modal">
             <div class="playa__modal__header">
@@ -60,12 +65,57 @@
                         <use xlink:href="#svg-logo"></use>
                     </svg>
                 </div>
-                <a href="" data-bs-dismiss="modal">
-                    Закрыть
+                <a href="" data-bs-dismiss="modal" class="playa__modal__close">
+                    <span class="only-pc">Закрыть</span>
+                    <svg class="d-block" width="24" height="24">
+                        <use xlink:href="#svg-plus2"></use>
+                    </svg>
                 </a>
             </div>
             <div class="playa__modal__wrap">
-                11
+                <h2>Бронирование</h2>
+                <form action="" class="playa__modal__form" data-validate>
+                    <div class="playa__modal__form__inp">
+                        <input type="text" name="fio" autocomplete="off" placeholder="Ваше имя *" required>
+                    </div>
+                    <div class="playa__modal__form__inp">
+                        <input id="inpTel" name="phone" autocomplete="off" type="tel" placeholder="Номер телефона *"
+                               required>
+                    </div>
+                    <div class="playa__modal__form__inp">
+                        <input type="text" name="count" autocomplete="off" placeholder="Количество гостей *" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="playa__modal__form__inp">
+                                <input id="inpDate" autocomplete="off" name="date" type="text" placeholder="Дата *" required>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="playa__modal__form__inp">
+                                <input id="inpTime" autocomplete="off" name="time" type="text" placeholder="Время *" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="playa__modal__form__inp">
+                        <input type="text" placeholder="Сообщение" autocomplete="off" name="comment">
+                    </div>
+
+                    <label class="playa__modal__form__politica">
+                        <input type="checkbox" value="1" required name="yes" checked>
+                        <span>Я даю согласие на обработку персональных данных и
+                            соглашаюсь с <a>политикой конфиденциальности</a>
+                        </span>
+                    </label>
+
+                    <div class="playa__modal__form__footer">
+                        <button type="submit" class="playa__modal__form__submit">
+                            ЗАБРОНИРОВАТЬ СТОЛИК
+                        </button>
+                    </div>
+                </form>
             </div>
 
         </div>
@@ -80,6 +130,8 @@
         id='gsap-js'></script>
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js?ver=3.8.0'
         id='ScrollTrigger-js'></script>
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/validate/dist/validate.min.js"></script>
+<script src="https://unpkg.com/air-datepicker@3.0.1/air-datepicker.js"></script>
 
 </body>
 </html>

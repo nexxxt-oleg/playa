@@ -1,9 +1,10 @@
 @media screen and (max-width: 991px) {
-  .only-pc {
+  .only-pc,
+  .playa__menu__img  {
     display: none;
   }
   .playa__header__top {
-    height: 150px;
+    height: 100px;
     padding-top: 20px;
   }
    .playa__header__desc h1 {
@@ -32,13 +33,16 @@
   }
   .mob-desc-img2 {
     flex-direction:column-reverse;
+    padding-bottom: 0 !important;
   }
   .playa-box-text {
     padding-top: 30px !important;
   }
   .text .h2, .text h2 {
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: 30px !important;
+    padding-bottom: 20px !important;
+    font-size: 20px !important;
+    line-height: 24px;
   }
   .tpad50 {
     padding-top: 20px;
@@ -53,12 +57,189 @@
       height: 96px;
     }
   }
+  .playa__img-box2 {
+    height: auto;
+    margin: 0 0 0 -15px;
+    &__inner {
+      position: relative;
+      height: auto;
+      width: auto;
+      right: auto;
+      top: auto;
+    }
+  }
+  .playa__img-box1 {
+    margin: 0 -15px;
+  }
+  img {
+    max-width: 100%;
+    height: auto !important;
+  }
+  .text p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .playa__img-box5 {
+    height: auto;
+    margin: 0 -15px;
+    &__inner {
+      position: relative;
+      width: 100%;
+      right: auto;
+      top: auto;
+    }
+  }
+  .playa__section2 {
+    background-image: none;
+    .fpad120 {
+      padding-bottom: 30px !important;
+    }
+  }
+  .playa__footer__bottom {
+    text-align: center;
+    .copy {
+      display: block;
+      padding-bottom: 15px;
+    }
+  }
+  .playa__footer__bottom .web-master {
+    display: block !important;
+    width: 50px;
+    margin: 20px auto 0 auto;
+    span {
+      display: none;
+    }
+    .web-master__ico {
+      margin-left: 0;
+    }
+  }
+  .playa__header__desc {
+    padding-top: 50px;
+  }
+  .playa__header__logo .icon {
+    width: 110px;
+    height: 44px;
+  }
+  .playa__header__toggle-menu {
+    margin-top: 10px;
+  }
+  .only-mob {
+    display: block;
+  }
+  .playa__header__phone {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .playa__header__col-tel {
+    padding-top: 10px;
+  }
+  .playa__header__nav__list li {
+    padding: 10px 0;
+  }
 }
 
 @media screen and (max-width: 640px) {
+  .playa__header {
+    height: 570px;
+  }
   .playa__img-box4,
   .playa__img-box6 {
     display: none;
   }
-
+  .playa__menu-title {
+    margin-bottom: 20px;
+    svg {
+      margin-right: 20px;
+      width: 50px;
+      height: 45px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+  .playa__menu__accordion-button {
+    font-size: 30px;
+  }
+  .playa__menu {
+    margin-bottom: 30px;
+  }
+  .playa__menu__desc  {
+    h4 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .playa__menu__cost .price,
+  .playa__menu__cost:after{
+    font-size: 14px;
+  }
+  .playa__pre-footer {
+    height: 65px;
+     img {
+       width: 140px !important;
+     }
+  }
+  .playa__footer__logo {
+    justify-content: center;
+    display: flex;
+    padding-top: 15px;
+    margin-bottom: 25px;
+  }
+  .playa__footer__slogan {
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .playa__footer__time {
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    padding-bottom: 25px;
+  }
+  .playa__footer__row {
+    display: block !important;
+    text-align: center;
+  }
+  .playa__footer__phone {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  .coordinates {
+    display: block;
+  }
+  .playa__footer__addr {
+    padding-bottom: 30px;
+  }
+  .playa__footer__soc {
+    padding-bottom: 20px;
+    a {
+      font-size: 18px;
+    }
+  }
+  .playa__footer__addr p {
+    font-size: 16px;
+  }
+  .playa__footer__row__left .fpad50 {
+    padding-bottom: 30px;
+  }
+  .playa__header__nav__list li a {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .playa__header__nav {
+    min-height: 500px;
+  }
+  .playa__modal__form__footer {
+    padding: 0 10px;
+  }
+  .playa__modal__wrap .h2, .playa__modal__wrap h2 {
+    font-size: 30px;
+  }
 }

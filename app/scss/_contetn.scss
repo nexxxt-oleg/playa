@@ -17,17 +17,18 @@ body {
 
     &__top {
       padding-top: 50px;
-      height: 248px;
+      height: 140px;
       position: relative;
       z-index: 30;
     }
 
     &__nav {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       z-index: 20;
       width: 100vw;
+      min-height: 600px;
       height: 100vh;
       background: #ec641d url("../images/dist/bg.svg") 50% 50% / cover;
       transition: all 0.5s ease-in-out;
@@ -51,6 +52,7 @@ body {
       font-feature-settings: "lnum";
       white-space: nowrap;
       letter-spacing: 0.1em;
+
       &:hover {
         color: #fff;
       }
@@ -58,6 +60,7 @@ body {
 
     &__desc {
       text-align: center;
+      padding-top: 108px;
 
       h1 {
         display: block;
@@ -87,6 +90,10 @@ body {
   text-align: right;
 }
 
+.only-mob {
+  display: none;
+}
+
 .btn.btn-yellow {
   height: 50px;
   padding: 10px 30px;
@@ -102,6 +109,7 @@ body {
   text-decoration: none;
   letter-spacing: 0.1em;
   border-radius: 0;
+
   &:hover,
   &:active {
     outline: none;
@@ -394,20 +402,33 @@ body {
 }
 
 .playa__menu__img {
-  position: absolute;
-  z-index: 10;
-  top: 50px;
-  right: 100%;
-  margin-right: 0;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
-.playa__menu__body.show {
-  .playa__menu__img {
-    margin-right: 200px;
-    opacity: 1;
+  display: flex;
+  justify-content: flex-end;
+  &__inner {
+    padding-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    width: 150vw;
+    padding-right: 100px;
+    img {
+      opacity: 0;
+
+    }
   }
 }
+.accordion {
+  margin-top: -60px;
+}
+
+.playa__menu__body.show {
+
+  .playa__menu__img img {
+    margin-right: 100px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 .playa__pre-footer {
   display: flex;
   justify-content: flex-end;
@@ -416,16 +437,20 @@ body {
   position: relative;
   z-index: 10;
 }
+
 .zi-2 {
   z-index: 2;
 }
+
 .playa__footer {
   background: #f5f7f7;
   padding-top: 100px;
+
   &__logo {
     color: #bac9c8;
     margin-bottom: 45px;
   }
+
   &__slogan {
     color: #5c5c5c;
     font-size: 24px;
@@ -433,6 +458,7 @@ body {
     padding-bottom: 15px;
     font-weight: bold;
   }
+
   &__time {
     padding-bottom: 40px;
     color: #5c5c5c;
@@ -443,9 +469,11 @@ body {
     font-variant-numeric: lining-nums;
   }
 }
+
 .playa__footer__row__left {
   flex-grow: 1;
 }
+
 .playa__footer__soc a {
   display: block;
   color: #5c5c5c;
@@ -457,10 +485,12 @@ body {
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+
   &:hover {
     color: #ec641d;
   }
 }
+
 .playa__footer__phone {
   font-size: 36px;
   line-height: 40px;
@@ -472,15 +502,19 @@ body {
   letter-spacing: 0.1em;
   display: block;
   margin-bottom: 20px;
+
   &:hover {
     color: #ec641d;
   }
 }
+
 .fpad50 {
   padding-bottom: 50px;
 }
+
 .playa__footer__addr {
   font-weight: 500;
+
   p {
     color: #5c5c5c;
     font-weight: 500;
@@ -490,21 +524,25 @@ body {
     font-feature-settings: "lnum";
     font-variant-numeric: lining-nums;
   }
+
   a {
     color: #ec641d;
     font-weight: 500;
     font-size: 18px;
     line-height: 24px;
     text-decoration: underline;
+
     &:hover {
       text-decoration: none;
       color: #ec641d;
     }
   }
 }
+
 .playa__footer__bottom {
   border-top: 2px solid #fff;
   padding: 22px 0;
+
   span,
   a {
     color: #5c5c5c;
@@ -512,10 +550,12 @@ body {
     line-height: 18px;
     text-decoration: none;
   }
+
   .web-master {
     display: inline-flex;
     align-items: center;
     margin-right: 50px;
+
     &__ico {
       width: 50px;
       height: 50px;
@@ -528,6 +568,7 @@ body {
     }
   }
 }
+
 .playa__header__toggle-menu {
   display: inline-flex;
   align-items: center;
@@ -539,6 +580,7 @@ body {
   font-weight: bold;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+
   &__ico {
     width: 40px;
     display: block;
@@ -546,6 +588,7 @@ body {
     z-index: 20;
     margin-right: 25px;
     height: 18px;
+
     &::after,
     &::before {
       content: "";
@@ -557,12 +600,15 @@ body {
       background-color: #fff;
       position: absolute;
     }
+
     &::after {
       top: 0;
     }
+
     &::before {
       bottom: 0;
     }
+
     span {
       display: block;
       width: 15px;
@@ -575,6 +621,7 @@ body {
       position: absolute;
     }
   }
+
   &:hover {
     .playa__header__toggle-menu__ico {
       span {
@@ -585,26 +632,27 @@ body {
 }
 
 body.menu-active {
-  .playa__header__top {
-    height: 120px;
-  }
+
   .playa__header__toggle-menu {
     &__ico {
       &::after,
       &::before {
         width: 0;
       }
+
       span {
         width: 100%;
       }
     }
   }
+
   .playa__header__nav {
     transform: translateY(0);
   }
 }
+
 .playa__header__nav__list {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -613,10 +661,12 @@ body.menu-active {
   z-index: 40;
   padding-top: 120px;
   padding-bottom: 50px;
+
   li {
     padding: 25px 0;
     text-align: center;
     overflow: hidden;
+
     a {
       display: inline-block;
       white-space: nowrap;
@@ -627,6 +677,7 @@ body.menu-active {
       text-decoration: none;
       opacity: 0;
       cursor: pointer;
+
       &::after,
       &::before {
         content: "";
@@ -639,12 +690,15 @@ body.menu-active {
         height: 4px;
         background: #f6aa3b;
       }
-      &::after{
+
+      &::after {
         left: 50%;
       }
+
       &::before {
         right: 50%;
       }
+
       &:hover {
         &::after,
         &::before {
@@ -654,17 +708,183 @@ body.menu-active {
     }
   }
 }
+
 .modal {
   background: #ec641d url("../images/dist/bg.svg") 50% 50% / cover;
 }
-.btn-check:focus+.btn, .btn:focus {
+
+.btn-check:focus + .btn, .btn:focus {
   box-shadow: none !important;
 }
+
 .playa__modal {
   border-radius: 0 !important;
   background: transparent !important;
   border: none !important;
+
   &__header {
     position: relative;
+    padding-bottom: 40px;
   }
+
+  &__close {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 0;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: bold;
+    text-decoration: none;
+    &:focus,
+    &:active {
+      color: #fff;
+    }
+
+    svg {
+      margin-left: 10px;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.playa__header__nav__list li {
+  width: 100%;
+}
+
+.playa__modal__wrap {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 30px;
+  }
+}
+
+.playa__modal__form {
+  &__inp {
+    padding-bottom: 15px;
+    position: relative;
+
+    input {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border-width: 0 0 1px 0;
+      border-style: solid;
+      border-color: #fff;
+      color: #fff;
+      height: 54px;
+      font-size: 18px;
+      line-height: 54px;
+      font-weight: 500;
+
+      &::placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__politica {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 35px;
+
+    input {
+      display: none;
+      &:checked {
+        & + span::after {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 382.87'%3E%3Cg id='Слой_2' data-name='Слой 2'%3E%3Cg id='Слой_1-2' data-name='Слой 1'%3E%3Cpath fill='%23ec641d' d='M444.18,0,183.3,242,73,124.28,0,192.66,178.23,382.87,512,73.52Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    span {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      font-size: 12px;
+      line-height: 18px;
+      color: #fff;
+      font-weight: 400;
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 10;
+        top: 3px;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-color: #fff;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 12px auto;
+      }
+    }
+
+
+  }
+
+  &__footer {
+    padding: 0 50px;
+  }
+
+  &__submit {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    height: 48px;
+    padding: 0;
+    color: #ec641d;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    justify-content: center;
+    &:focus,
+    &:active {
+      outline: none;
+      color: #ec641d;
+      box-shadow: none;
+    }
+  }
+}
+.error-message {
+  font-size: 10px;
+  line-height: 14px;
+  padding-top: 5px;
+  font-weight: 400;
+  color: #fff;
+}
+.air-datepicker-global-container {
+  z-index: 99999;
+}
+.playa__modal__close:hover {
+  color: #fff;
 }
