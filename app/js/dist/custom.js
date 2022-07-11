@@ -133,14 +133,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    var collapceClick = false;
+    if(!collapceClick) {
+        window.onscroll = function () {
+            //console.log(window.pageYOffset);
 
-
-    /*var collapseElementList = Array.prototype.slice.call(document.querySelectorAll('.playa__menu__body'))
-    var collapseList = collapseElementList.map((collapseEl) => {
-        collapseEl.addEventListener('show.bs.collapse', function () {
-            console.log('2222');
+            let activeBox = document.getElementById('collapseMenu1');
+            let activeBoxImg = activeBox.getElementsByClassName('playa__menu__img')
+            if(activeBox.getBoundingClientRect().top < -30) {
+                activeBoxImg[0].style.top = activeBox.getBoundingClientRect().top * (-1) + 'px';
+            } else {
+                activeBoxImg[0].style.top = '50px';
+            }
 
         }
-    )};*/
+    }
+
+
+    var collapseElementList = Array.prototype.slice.call(document.querySelectorAll('.playa__menu__body'))
+    collapseElementList.map(function (collapseEl) {
+        collapseEl.addEventListener('show.bs.collapse', function () {
+            window.onscroll = function () {
+                //console.log(window.pageYOffset);
+
+                let activeBox = document.getElementById(collapseEl.id);
+                let activeBoxImg = activeBox.getElementsByClassName('playa__menu__img')
+                if(activeBox.getBoundingClientRect().top < -30) {
+                    activeBoxImg[0].style.top = activeBox.getBoundingClientRect().top * (-1) + 'px';
+                } else {
+                    activeBoxImg[0].style.top = '50px';
+                }
+
+            }
+            console.log(collapceClick);
+            collapceClick = true;
+        });
+
+        collapseEl.addEventListener('hidden.bs.collapse', function () {
+            document.getElementById(collapseEl.id)
+                .getElementsByClassName('playa__menu__img')[0].style.top = '50px';
+        });
+    })
+
 
 });

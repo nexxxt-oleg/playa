@@ -405,7 +405,7 @@ body {
   display: flex;
   justify-content: flex-end;
   &__inner {
-    padding-top: 50px;
+
     display: flex;
     justify-content: flex-end;
     width: 150vw;
@@ -887,4 +887,16 @@ body.menu-active {
 }
 .playa__modal__close:hover {
   color: #fff;
+}
+.playa__menu__list {
+  position: relative;
+  overflow: hidden;
+  .col-lg-5 {
+    position: relative;
+    .playa__menu__img {
+      position: absolute;
+      top: 50px;
+      right: 0;
+    }
+  }
 }
