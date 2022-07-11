@@ -128,9 +128,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    //new AirDatepicker('#inpDate');
 
     new AirDatepicker('#inpDate', {
 
     });
+
+
+
+    /*var collapseElementList = Array.prototype.slice.call(document.querySelectorAll('.playa__menu__body'))
+    var collapseList = collapseElementList.map((collapseEl) => {
+        collapseEl.addEventListener('show.bs.collapse', function () {
+            console.log('2222');
+
+        }
+    )};*/
+
 });

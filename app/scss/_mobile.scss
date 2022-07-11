@@ -1,3 +1,12 @@
+@media screen and (max-width: 1520px) {
+  .playa__menu__img__inner {
+    padding-right: 0;
+  }
+  .playa__menu__body.show .playa__menu__img img {
+    margin-right: 50px;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .only-pc,
   .playa__menu__img  {
@@ -135,6 +144,9 @@
   }
   .playa__header__nav__list li {
     padding: 10px 0;
+  }
+  .accordion {
+    margin-top: 0;
   }
 }
 
